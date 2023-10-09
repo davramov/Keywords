@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Keyword Matcher</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="column" id="column-1">
+            <h2>Job Listing</h2>
+            <textarea id="job-listing-textbox" placeholder="Paste job listing here..."></textarea>
+        </div>
+        <div class="column" id="column-2">
+            <h2>Your Resume</h2>
+            <textarea id="resume-textbox" placeholder="Paste your resume here..."></textarea>
+        </div>
+        <div class="column" id="column-3">
+            <div id="match-metric">Total Match: 0.00%</div>
+            <h2>Keywords</h2>
+            <ul id="keyword-list"></ul>
+            <div id="buttons">
+                <button id="save-button">Save Session</button>
+                <button id="restore-button">Restore Session</button>
+                <button id="undo-button">Undo</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
