@@ -10,6 +10,7 @@ body {
     display: flex;
     justify-content: space-between;
     overflow-x: hidden;
+    height: 100vh;
 }
 
 .column {
@@ -19,9 +20,8 @@ body {
     padding: 20px;
     flex: 1;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow-y: scroll;
+    overflow-y: auto;
     margin: 10px;
-    max-height: 500px;
 }
 
 .column h2 {

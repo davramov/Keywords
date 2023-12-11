@@ -10,6 +10,7 @@ let resumeText = "";
 //     /* Add more common words here */
 // ];
 
+
 const commonWords = [
     "a", "about", "above", "after", "again", "against", "ain't", "all", "am", "an", "and", "any", "are", "aren't", "as", "at", "be", "because", "been", "before", "being", "below", "between", "both", "but", "by",
     "can't", "cannot", "could", "couldn't", "did", "didn't", "do", "does", "doesn't", "doing", "don't", "down", "during",
@@ -250,8 +251,15 @@ function restoreSession() {
 // Function to highlight keywords in the resume text
 function highlightKeywordsInResume() {
     const resumeTextbox = document.getElementById("resume-textbox");
+    const wordCountElement = document.getElementById("word-count");
+
     const resumeText = resumeTextbox.value.toLowerCase();
-    const jobListingText = jobListingText.toLowerCase();
+
+    const wordCount = resumeText.trim().split(/\s+/).filter(word => word !== "").length;
+
+    wordCountElement.textContent = `Word Count: ${wordCount}`;
+
+    jobListingText = jobListingText.toLowerCase();
 
     const jobKeywords = jobListingText.split(/\s+/).map(word => removePunctuation(word));
 
@@ -278,6 +286,7 @@ const resumeTextbox = document.getElementById("resume-textbox");
 resumeTextbox.addEventListener("input", () => {
     updateKeywords();
     updateMatchPercentage();
+    highlightKeywordsInResume();
     saveSession(); // Save session on input change
 });
 
